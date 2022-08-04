@@ -1,0 +1,66 @@
+$light-color: #f4f4f4;
+$primary-color: rgb(69, 187, 108);
+$secondary-color: rgb(255, 72, 0);
+
+
+// For buttons
+%btn {
+    display: inline-block;
+    padding: 8px 20px;
+    margin: 3px;
+    border-radius: 5px;
+    color: rgb(248, 245, 245);
+    text-decoration: none;
+
+    &:hover {
+        transform: scale(0.98);
+        box-shadow: -2px 2px 10px rgb(113, 114, 121);
+    }
+
+
+}
+
+.btn-primary {
+    @extend %btn;
+    background: lighten($primary-color, 10%);
+}
+
+.btn-secondary {
+    @extend %btn;
+    background: lighten($secondary-color, 15);
+}
+
+
+// Margin & padding classes
+$spaceamounts: (1,2,3,4,5);
+
+@each $space in $spaceamounts {
+  .m-#{$space} {
+    margin: #{$space}rem;
+  }
+  .my-#{$space} {
+    margin: #{$space}rem 0;
+  }
+
+  .p-#{$space} {
+    padding: #{$space}rem;
+  }
+  .py-#{$space} {
+    padding: #{$space}rem 0;
+  }
+}
+
+// _mobile.scss
+@media(max-width: 700px) {
+    .showcase {
+      height: 400px;
+  
+      &-content {
+        text-align: center;
+  
+        img {
+          display: none;
+        }
+      }
+    }
+  }
